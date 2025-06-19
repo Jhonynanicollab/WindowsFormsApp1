@@ -27,7 +27,8 @@ namespace WindowsFormsApp1
             nuevaVentana.Show();
 
             // (Opcional) Ocultar esta ventana actual:
-            // this.Hide();
+            this.Hide();
+     
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
