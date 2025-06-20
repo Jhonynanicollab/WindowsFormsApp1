@@ -59,6 +59,8 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.btnAtras_Click = new System.Windows.Forms.PictureBox();
             this.lblEcuacion = new System.Windows.Forms.Label();
+            this.button27 = new System.Windows.Forms.Button();
+            this.button28 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnAtras_Click)).BeginInit();
@@ -392,19 +394,40 @@
             // 
             this.lblEcuacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblEcuacion.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEcuacion.Location = new System.Drawing.Point(443, 318);
+            this.lblEcuacion.Location = new System.Drawing.Point(355, 319);
             this.lblEcuacion.Name = "lblEcuacion";
-            this.lblEcuacion.Size = new System.Drawing.Size(242, 99);
+            this.lblEcuacion.Size = new System.Drawing.Size(418, 99);
             this.lblEcuacion.TabIndex = 22;
-            this.lblEcuacion.Text = "\"\"";
             this.lblEcuacion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblEcuacion.Click += new System.EventHandler(this.lblEcuacion_Click);
+            // 
+            // button27
+            // 
+            this.button27.Location = new System.Drawing.Point(1127, 118);
+            this.button27.Name = "button27";
+            this.button27.Size = new System.Drawing.Size(83, 40);
+            this.button27.TabIndex = 23;
+            this.button27.Text = "CE";
+            this.button27.UseVisualStyleBackColor = true;
+            this.button27.Click += new System.EventHandler(this.buttonLimpiar_Click);
+            // 
+            // button28
+            // 
+            this.button28.Location = new System.Drawing.Point(566, 120);
+            this.button28.Name = "button28";
+            this.button28.Size = new System.Drawing.Size(75, 44);
+            this.button28.TabIndex = 24;
+            this.button28.Text = "borrar";
+            this.button28.UseVisualStyleBackColor = true;
+            this.button28.Click += new System.EventHandler(this.buttonBorrar_Click);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1260, 569);
+            this.Controls.Add(this.button28);
+            this.Controls.Add(this.button27);
             this.Controls.Add(this.lblEcuacion);
             this.Controls.Add(this.btnAtras_Click);
             this.Controls.Add(this.richTextBox1);
@@ -453,5 +476,7 @@
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.PictureBox btnAtras_Click;
         private System.Windows.Forms.Label lblEcuacion;
+        private System.Windows.Forms.Button button27;
+        private System.Windows.Forms.Button button28;
     }
 }

@@ -153,6 +153,17 @@ namespace WindowsFormsApp1
             // Aquí puedes agregar lógica si necesitas que algo suceda al hacer clic en lblEcuacion
 
         }
-    }
+        private void buttonLimpiar_Click(object sender, EventArgs e)
+        {
+            lblEcuacion.Text = "";
+        }
+
+        private void buttonBorrar_Click(object sender, EventArgs e)
+        {
+            if (lblEcuacion.Text.Length > 0)
+                lblEcuacion.Text = lblEcuacion.Text.Substring(0, lblEcuacion.Text.Length - 1);
+        }
 
     }
+
+}
