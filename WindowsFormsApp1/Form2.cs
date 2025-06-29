@@ -71,7 +71,7 @@ namespace WindowsFormsApp1
         }
         private void button11_Click(object sender, EventArgs e)
         {
-            AgregarCaracter("0");
+            AgregarCaracter("x");
         }
         private void button12_Click(object sender, EventArgs e)
         {
@@ -164,6 +164,117 @@ namespace WindowsFormsApp1
                 lblEcuacion.Text = lblEcuacion.Text.Substring(0, lblEcuacion.Text.Length - 1);
         }
 
+        private void button29_Click(object sender, EventArgs e)
+        {
+            string expresion = lblEcuacion.Text;
+
+            try
+            {
+                if (expresion.Contains("x") && expresion.Contains("="))
+                {
+                    // Resolver ecuación de primer grado
+                    string solucion = ResolverEcuacionPrimerGrado(expresion, out string procedimiento);
+                    lblResultado.Text = "x = " + solucion;
+
+                    // Muestra proceso paso a paso en un MessageBox o un nuevo Label/RichTextBox
+                    MessageBox.Show(procedimiento, "Procedimiento");
+                }
+                else
+                {
+                    // Operación aritmética normal
+                    string expr = expresion.Replace("π", Math.PI.ToString());
+                    var resultado = new DataTable().Compute(expr, null);
+                    lblResultado.Text = resultado.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en la expresión:\n" + ex.Message);
+            }
+        }
+
+        private string ResolverEcuacionPrimerGrado(string ecuacion, out string pasos)
+        {
+            pasos = "";
+
+            ecuacion = ecuacion.Replace(" ", "").ToLower();
+
+            if (!ecuacion.Contains("="))
+                throw new Exception("La ecuación debe tener un '='.");
+
+            string[] lados = ecuacion.Split('=');
+            string izquierda = lados[0];
+            string derecha = lados[1];
+
+            double coefX = 0;
+            double constanteIzq = 0;
+
+            string actual = "";
+            int signo = 1;
+
+            for (int i = 0; i < izquierda.Length; i++)
+            {
+                char c = izquierda[i];
+
+                if (c == '+')
+                {
+                    ProcesarTermino(actual, signo, ref coefX, ref constanteIzq);
+                    actual = "";
+                    signo = 1;
+                }
+                else if (c == '-')
+                {
+                    ProcesarTermino(actual, signo, ref coefX, ref constanteIzq);
+                    actual = "";
+                    signo = -1;
+                }
+                else
+                {
+                    actual += c;
+                }
+            }
+
+            ProcesarTermino(actual, signo, ref coefX, ref constanteIzq);
+
+            double resultadoDerecha = double.Parse(derecha);
+            double x = (resultadoDerecha - constanteIzq) / coefX;
+
+            pasos = $"Paso 1: Se despeja la ecuación: {coefX}x + {constanteIzq} = {resultadoDerecha}\n" +
+                    $"Paso 2: Restamos {constanteIzq}: {coefX}x = {resultadoDerecha - constanteIzq}\n" +
+                    $"Paso 3: Dividimos entre {coefX}: x = {(resultadoDerecha - constanteIzq) / coefX}";
+
+            return x.ToString("0.###");
+        }
+
+        private void ProcesarTermino(string termino, int signo, ref double coefX, ref double constante)
+        {
+            if (string.IsNullOrWhiteSpace(termino))
+                return;
+
+            if (termino.Contains("x"))
+            {
+                string coef = termino.Replace("x", "");
+                if (coef == "") coef = "1";
+                coefX += signo * double.Parse(coef);
+            }
+            else
+            {
+                constante += signo * double.Parse(termino);
+            }
+        }
+
+
+        private void lblResultado_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCamara_Click(object sender, EventArgs e)
+        {
+            Form3 ventanaEscaneo = new Form3();
+            ventanaEscaneo.Show();
+            this.Hide(); // O usa .Close() si no deseas regresar
+        }
     }
 
 }

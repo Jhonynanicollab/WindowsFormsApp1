@@ -63,6 +63,26 @@ namespace WindowsFormsApp1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _573deccccea38aef182e051bf6723224 {
+            get {
+                object obj = ResourceManager.GetObject("573deccccea38aef182e051bf6723224", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _83723218_photographic_camera_icon_over_white_background_vector_illustration {
+            get {
+                object obj = ResourceManager.GetObject("83723218-photographic-camera-icon-over-white-background-vector-illustration", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cuack {
             get {
                 object obj = ResourceManager.GetObject("cuack", resourceCulture);

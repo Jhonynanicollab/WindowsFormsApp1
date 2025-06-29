@@ -57,10 +57,13 @@
             this.button22 = new System.Windows.Forms.Button();
             this.button23 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.btnAtras_Click = new System.Windows.Forms.PictureBox();
             this.lblEcuacion = new System.Windows.Forms.Label();
             this.button27 = new System.Windows.Forms.Button();
             this.button28 = new System.Windows.Forms.Button();
+            this.button29 = new System.Windows.Forms.Button();
+            this.lblResultado = new System.Windows.Forms.Label();
+            this.btnCamara = new System.Windows.Forms.Button();
+            this.btnAtras_Click = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnAtras_Click)).BeginInit();
@@ -177,11 +180,12 @@
             // 
             // button11
             // 
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button11.Location = new System.Drawing.Point(631, 21);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(56, 39);
             this.button11.TabIndex = 10;
-            this.button11.Text = "0";
+            this.button11.Text = "x";
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
@@ -379,22 +383,11 @@
             this.richTextBox1.TabIndex = 20;
             this.richTextBox1.Text = "";
             // 
-            // btnAtras_Click
-            // 
-            this.btnAtras_Click.Image = global::WindowsFormsApp1.Properties.Resources.images;
-            this.btnAtras_Click.Location = new System.Drawing.Point(1154, 512);
-            this.btnAtras_Click.Name = "btnAtras_Click";
-            this.btnAtras_Click.Size = new System.Drawing.Size(44, 45);
-            this.btnAtras_Click.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnAtras_Click.TabIndex = 21;
-            this.btnAtras_Click.TabStop = false;
-            this.btnAtras_Click.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // lblEcuacion
             // 
             this.lblEcuacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblEcuacion.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEcuacion.Location = new System.Drawing.Point(355, 319);
+            this.lblEcuacion.Location = new System.Drawing.Point(196, 329);
             this.lblEcuacion.Name = "lblEcuacion";
             this.lblEcuacion.Size = new System.Drawing.Size(418, 99);
             this.lblEcuacion.TabIndex = 22;
@@ -421,11 +414,56 @@
             this.button28.UseVisualStyleBackColor = true;
             this.button28.Click += new System.EventHandler(this.buttonBorrar_Click);
             // 
+            // button29
+            // 
+            this.button29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.button29.Location = new System.Drawing.Point(717, 119);
+            this.button29.Name = "button29";
+            this.button29.Size = new System.Drawing.Size(138, 53);
+            this.button29.TabIndex = 25;
+            this.button29.Text = "CALCULAR";
+            this.button29.UseVisualStyleBackColor = false;
+            this.button29.Click += new System.EventHandler(this.button29_Click);
+            // 
+            // lblResultado
+            // 
+            this.lblResultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResultado.Location = new System.Drawing.Point(745, 329);
+            this.lblResultado.Name = "lblResultado";
+            this.lblResultado.Size = new System.Drawing.Size(152, 99);
+            this.lblResultado.TabIndex = 26;
+            this.lblResultado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblResultado.Click += new System.EventHandler(this.lblResultado_Click);
+            // 
+            // btnCamara
+            // 
+            this.btnCamara.Image = global::WindowsFormsApp1.Properties.Resources._573deccccea38aef182e051bf6723224;
+            this.btnCamara.Location = new System.Drawing.Point(1163, 317);
+            this.btnCamara.Name = "btnCamara";
+            this.btnCamara.Size = new System.Drawing.Size(85, 61);
+            this.btnCamara.TabIndex = 27;
+            this.btnCamara.UseVisualStyleBackColor = true;
+            this.btnCamara.Click += new System.EventHandler(this.btnCamara_Click);
+            // 
+            // btnAtras_Click
+            // 
+            this.btnAtras_Click.Image = global::WindowsFormsApp1.Properties.Resources.images;
+            this.btnAtras_Click.Location = new System.Drawing.Point(1154, 512);
+            this.btnAtras_Click.Name = "btnAtras_Click";
+            this.btnAtras_Click.Size = new System.Drawing.Size(44, 45);
+            this.btnAtras_Click.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnAtras_Click.TabIndex = 21;
+            this.btnAtras_Click.TabStop = false;
+            this.btnAtras_Click.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1260, 569);
+            this.Controls.Add(this.btnCamara);
+            this.Controls.Add(this.lblResultado);
+            this.Controls.Add(this.button29);
             this.Controls.Add(this.button28);
             this.Controls.Add(this.button27);
             this.Controls.Add(this.lblEcuacion);
@@ -478,5 +516,8 @@
         private System.Windows.Forms.Label lblEcuacion;
         private System.Windows.Forms.Button button27;
         private System.Windows.Forms.Button button28;
+        private System.Windows.Forms.Button button29;
+        private System.Windows.Forms.Label lblResultado;
+        private System.Windows.Forms.Button btnCamara;
     }
 }
